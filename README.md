@@ -1,6 +1,6 @@
 # `vite-plugin-vue2` ignores Vite `base` option
 
-This repository contains a minimal reproduction of the issue (link to the issue coming soon) using both Vue 2 and Vue 3.
+This repository contains a minimal reproduction of the [issue](https://github.com/underfin/vite-plugin-vue2/issues/174) using both Vue 2 and Vue 3.
 
 ## The issue
 
