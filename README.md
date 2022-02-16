@@ -1,10 +1,10 @@
-# `vite-plugin-vue2` doesn’t honor Vite `base` option
+# `vite-plugin-vue2` ignores Vite `base` option
 
 This repository contains a minimal reproduction of the issue (link to the issue coming soon) using both Vue 2 and Vue 3.
 
 ## The issue
 
-The [`vite-plugin-vue2`](https://npmjs.com/package/vite-plugin-vue2) plugin for Vite doesn’t honor [Vite `base` URL](https://vitejs.dev/config/#base) option, while [`@vitejs/plugin-vue`](https://www.npmjs.com/package/@vitejs/plugin-vue) does.
+The [`vite-plugin-vue2`](https://npmjs.com/package/vite-plugin-vue2) plugin for Vite ignores [Vite `base` URL](https://vitejs.dev/config/#base) option, while [`@vitejs/plugin-vue`](https://www.npmjs.com/package/@vitejs/plugin-vue) does.
 
 ## Example app
 
@@ -35,7 +35,9 @@ and with `App.vue`:
 
 `src="/images/some-pic.png"` should become `src="/my-spa/images/some-pic.png"`.
 
-But [once compiled](vue-2/dist/vue-2-demo/assets/index.111647f0.js), it stays `src="/images/some-pic.png"`:
+## Current results
+
+[Once compiled](vue-2/dist/vue-2-demo/assets/index.111647f0.js), it stays `src="/images/some-pic.png"`:
 
 ```js
 {src:"/images/some-pic.png",alt:""}
