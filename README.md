@@ -4,7 +4,7 @@ This repository contains a minimal reproduction of the issue (link to the issue 
 
 ## The issue
 
-The [`vite-plugin-vue2`](npmjs.com/package/vite-plugin-vue2) plugin for Vite doesn’t honor [Vite `base` URL](https://vitejs.dev/config/#base) option, while [`@vitejs/plugin-vue`](https://www.npmjs.com/package/@vitejs/plugin-vue) does.
+The [`vite-plugin-vue2`](https://npmjs.com/package/vite-plugin-vue2) plugin for Vite doesn’t honor [Vite `base` URL](https://vitejs.dev/config/#base) option, while [`@vitejs/plugin-vue`](https://www.npmjs.com/package/@vitejs/plugin-vue) does.
 
 ## Example app
 
