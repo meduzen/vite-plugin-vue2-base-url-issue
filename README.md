@@ -1,4 +1,4 @@
-# A reproduction of `vite-plugin-vue2` not honoring Vite `base` URL option
+# `vite-plugin-vue2` doesn’t honor Vite `base` option
 
 This repository contains a minimal reproduction of the issue (link to the issue coming soon) using both Vue 2 and Vue 3.
 
@@ -8,13 +8,13 @@ The [`vite-plugin-vue2`](npmjs.com/package/vite-plugin-vue2) plugin for Vite doe
 
 ## Example app
 
-You have use Vite `base` setting to indicate a base URL (for ex. your app is deployed under `/my-spa/`) and expect the plugin to prepend the base URL to public assets URL.
+You use Vite `base` setting to indicate a base URL (e.g. your app is deployed under `/my-spa/`) and expect the plugin to prepend the base path to any [public](https://vitejs.dev/config/#publicdir) path encountered in a Vue `<template>`.
 
 For example, with the [following directory structure](/vue-2):
 
 ```bash
 ├── dist (build)
-├── public (default Vite `publicDir` dir, copied as is in `outDir`)
+├── public (default Vite `publicDir`, copied as is in `outDir`)
 │   │── images
 │   │   └── some-pic.png
 ├── src
@@ -31,17 +31,17 @@ and with `App.vue`:
 </template>
 ```
 
-## Expectation
+## Expectations
 
 `src="/images/some-pic.png"` should become `src="/my-spa/images/some-pic.png"`.
 
-But as you can see in the [build folder of the Vue 2 demo](vue-2/dist/vue-2-demo/assets/index.111647f0.js), it stays `src="/images/some-pic.png"`:
+But [once compiled](vue-2/dist/vue-2-demo/assets/index.111647f0.js), it stays `src="/images/some-pic.png"`:
 
 ```js
 {src:"/images/some-pic.png",alt:""}
 ```
 
-On the other side, the Vue 3 plugin for Vite [does it fine](vue-3/dist/vue-3-demo/assets/index.1971754a.js):
+On the other side, the Vue 3 plugin for Vite [compiles it fine](vue-3/dist/vue-3-demo/assets/index.1971754a.js):
 
 ```js
 var u="/vue-3-demo/images/some-pic.png"
